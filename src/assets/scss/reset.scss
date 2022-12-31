@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Inter";
+  src: local("Merienda"), url(../fonts/Inter/static/Inter-Medium.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+a,
+li {
+  text-decoration: none;
+}
+input,
+textarea {
+  outline: none;
+}
+button {
+  border: 0;
+}
