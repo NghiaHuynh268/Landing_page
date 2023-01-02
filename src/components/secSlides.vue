@@ -4,12 +4,7 @@
       Let's See What Our <br />
       Clients Says
     </h2>
-    <carousel
-      :navigationEnabled="true"
-      :navigationNextLabel="nextLabel"
-      :navigationPrevLabel="backLabel"
-      :perPage="1"
-    >
+    <carousel :navigationEnabled="true" :perPage="1">
       <slide v-for="(slide, index) in dataSlides" :key="index">
         <div class="section__item flex">
           <img :src="slide.img" alt="" />
@@ -34,8 +29,6 @@ export default {
   data() {
     return {
       dataSlides: DATA_SLIDES,
-      nextLabel: '<div class="next"></div>',
-      backLabel: '<div class="back"></div>',
     };
   },
   components: {
