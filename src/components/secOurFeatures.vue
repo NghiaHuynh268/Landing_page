@@ -22,7 +22,7 @@
           class="edit-btn"
           @click="
             {
-              editItem(feature);
+              editItem(index);
             }
           "
         >
@@ -41,7 +41,7 @@
         type="button"
         @click="
           {
-            saveEdit(current.id);
+            saveEdit(itemIndex);
           }
         "
         :disabled="isDisabledEdit(current)"
@@ -97,6 +97,7 @@ export default {
       isActiveEdit: false,
       isActiveAdd: false,
       isActiveBg: false,
+      itemIndex: 0,
       current: {
         id: "",
         img: "",
@@ -113,13 +114,13 @@ export default {
   },
 
   methods: {
-    editItem: function ({ id, img, name, text }) {
+    editItem: function (index) {
       this.isActiveEdit = true;
       this.isActiveBg = true;
-      this.current.id = id;
-      this.current.img = img;
-      this.current.name = name;
-      this.current.text = text;
+      this.itemIndex = index;
+      this.current.img = this.data_features[index].img;
+      this.current.name = this.data_features[index].name;
+      this.current.text = this.data_features[index].text;
     },
     saveEdit: function (idSave) {
       this.isActiveEdit = false;
@@ -132,6 +133,10 @@ export default {
       this.isActiveEdit = false;
       this.isActiveAdd = false;
       this.isActiveBg = false;
+      this.addnew.id = "";
+      this.addnew.img = "";
+      this.addnew.name = "";
+      this.addnew.text = "";
     },
     addItem: function () {
       this.isActiveAdd = true;

@@ -46,37 +46,31 @@ export const DATA_LOGO = [
 
 export const DATA_FEATURES = [
   {
-    id: 0,
     img: require("../assets/images/icon_0.png"),
     name: "Blog Content",
     text: "Write optimized blog posts in a fraction of the time",
   },
   {
-    id: 1,
     img: require("../assets/images/icon_1.png"),
     name: "Article",
     text: "Write optimized blog posts in a fraction of the time",
   },
   {
-    id: 2,
     img: require("../assets/images/icon_2.png"),
     name: "Content Writing",
     text: "Write optimized blog posts in a fraction of the time",
   },
   {
-    id: 3,
     img: require("../assets/images/icon_3.png"),
     name: "Seo",
     text: "Write optimized blog posts in a fraction of the time",
   },
   {
-    id: 4,
     img: require("../assets/images/icon_4.png"),
     name: "Design",
     text: "Write optimized blog posts in a fraction of the time",
   },
   {
-    id: 5,
     img: require("../assets/images/icon_5.png"),
     name: "Coding",
     text: "Write optimized blog posts in a fraction of the time",

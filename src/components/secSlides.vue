@@ -4,7 +4,12 @@
       Let's See What Our <br />
       Clients Says
     </h2>
-    <carousel>
+    <carousel
+      :navigationEnabled="true"
+      :navigationNextLabel="nextLabel"
+      :navigationPrevLabel="backLabel"
+      :perPage="1"
+    >
       <slide v-for="(slide, index) in dataSlides" :key="index">
         <div class="section__item flex">
           <img :src="slide.img" alt="" />
@@ -29,6 +34,8 @@ export default {
   data() {
     return {
       dataSlides: DATA_SLIDES,
+      nextLabel: '<div class="next"></div>',
+      backLabel: '<div class="back"></div>',
     };
   },
   components: {
@@ -67,6 +74,7 @@ export default {
     flex-wrap: wrap;
     border: 1px solid #f1f1f1;
     border-radius: 5px;
+    margin: auto;
     > img {
       margin-right: 16px;
       margin-bottom: 24px;
