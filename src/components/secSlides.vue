@@ -4,7 +4,12 @@
       Let's See What Our <br />
       Clients Says
     </h2>
-    <carousel :navigationEnabled="true" :perPage="1">
+    <carousel
+      :navigationEnabled="true"
+      :navigationNextLabel="nextLabel"
+      :navigationPrevLabel="prevLabel"
+      :perPage="1"
+    >
       <slide v-for="(slide, index) in dataSlides" :key="index">
         <div class="section__item flex">
           <img :src="slide.img" alt="" />
@@ -18,17 +23,22 @@
         </div>
       </slide>
     </carousel>
+    <div class="label__next"></div>
   </div>
 </template>
 
 <script>
 import { DATA_SLIDES } from "@/resources/data";
 import { Carousel, Slide } from "vue-carousel";
+import arrowLeft from "../assets/images/arrow-left.png";
+import arrowRight from "../assets/images/arrow-right.png";
 
 export default {
   data() {
     return {
       dataSlides: DATA_SLIDES,
+      nextLabel: `<div class="label--next"><img src="${arrowRight}" alt=""></div>`,
+      prevLabel: `<div class="label--next"><img src="${arrowLeft}" alt=""></div>`,
     };
   },
   components: {
